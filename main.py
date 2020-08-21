@@ -35,16 +35,3 @@ def callback_worker(call):
     bot.send_message(call.message.chat.id, msg)
 
 bot.polling(none_stop=True, interval=0)
-
-for i in dict_zodiacs.keys():
-    print (i ,' - ', dict_zodiacs[i])
-
-zodiac=int(input('{blue}Input zodiac number: {endcolor}'.format(blue="\033[96m", endcolor="\033[0m")))
-
-if 0 < zodiac < 13:
-    print("Horoscope for", str('{red}'+'{bold}'+dict_zodiacs[zodiac]+'{endcolor}').format(red="\033[31m",bold="\033[1m",
-                                                                                          endcolor="\033[0m",
-                                                                                          )+':')
-    print(random.choice(first), random.choice(second), random.choice(second_add), random.choice(third))
-else:
-    print("Wrong zodiac number")
