@@ -1,4 +1,18 @@
+import telebot; bot = telebot.TeleBot('1253833567:AAGiWnXTpDTtnnuqLC8_X83Un0ebLrDvoGs');
 import random
+
+
+@bot.message_handler(content_types=['text'])
+def get_text_messages(message):
+    if message.text == "Hello":
+        bot.send_message(message.from_user.id, "Hello, I am going to predict your horoscope")
+    elif message.text == "/help":
+        bot.send_message(message.from_user.id, "write 'Hello'")
+    else:
+        bot.send_message(message.from_user.id, "I do not understand. Write /help.")
+
+bot.polling(none_stop=True, interval=0)
+
 
 first = ["Сегодня — идеальный день для новых начинаний.","Оптимальный день для того, чтобы решиться на смелый поступок!","Будьте осторожны, сегодня звёзды могут повлиять на ваше финансовое состояние.","Лучшее время для того, чтобы начать новые отношения или разобраться со старыми.","Плодотворный день для того, чтобы разобраться с накопившимися делами."]
 second = ["Но помните, что даже в этом случае нужно не забывать про","Если поедете за город, заранее подумайте про","Те, кто сегодня нацелен выполнить множество дел, должны помнить про","Если у вас упадок сил, обратите внимание на","Помните, что мысли материальны, а значит вам в течение дня нужно постоянно думать про"]
